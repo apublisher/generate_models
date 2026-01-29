@@ -14,27 +14,26 @@ Generate Flask-SQLAlchemy ORM model files from existing database schemas.
 
 ## Installation
 
-### From PyPI (once published)
+### From GitHub
 ```bash
-pip install flask-sqlalchemy-model-generator
-```
+# Basic installation
+pip install git+https://github.com/apublisher/generate_models.git
 
-### From source
-```bash
-cd flask-sqlalchemy-model-generator
-pip install -e .
-```
+# With MySQL/MariaDB support
+pip install "git+https://github.com/apublisher/generate_models.git#egg=flask-sqlalchemy-model-generator[mysql]"
 
-### With database drivers
-```bash
-# For MySQL/MariaDB
-pip install flask-sqlalchemy-model-generator[mysql]
-
-# For PostgreSQL
-pip install flask-sqlalchemy-model-generator[postgresql]
+# With PostgreSQL support
+pip install "git+https://github.com/apublisher/generate_models.git#egg=flask-sqlalchemy-model-generator[postgresql]"
 
 # For development
-pip install flask-sqlalchemy-model-generator[dev]
+pip install "git+https://github.com/apublisher/generate_models.git#egg=flask-sqlalchemy-model-generator[dev]"
+```
+
+### From source (for local development)
+```bash
+git clone https://github.com/apublisher/generate_models.git
+cd generate_models
+pip install -e .
 ```
 
 ## Quick Start
