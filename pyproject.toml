@@ -47,9 +47,6 @@ Issues = "https://github.com/apublisher/generate_models/issues"
 [project.scripts]
 generate-models = "generate_models:cli"
 
-[tool.setuptools]
-py_modules = ["generate_models"]
-
 [tool.black]
 line-length = 100
 target-version = ['py310']
