@@ -1,6 +1,6 @@
-# Flask-SQLAlchemy Model Generator
+# SQLAlchemy Model Generator
 
-Generate Flask-SQLAlchemy ORM model files from existing database schemas.
+Generate SQLAlchemy ORM model files from existing database schemas.
 
 ## Features
 
