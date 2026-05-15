@@ -195,9 +195,13 @@ def load_schema(
             .get("constrained_columns", [])
         )
 
+        # Only mark columns as unique if they have a single-column unique constraint
+        # Composite unique constraints should not generate unique=True on individual columns
         unique_cols: set[str] = set()
         for uc in insp.get_unique_constraints(table, schema=schema) or []:
-            unique_cols.update(uc.get("column_names") or [])
+            cols = uc.get("column_names") or []
+            if len(cols) == 1:
+                unique_cols.add(cols[0])
 
         fk_map: Dict[str, List[Tuple[str, str]]] = {}
         for fk in insp.get_foreign_keys(table, schema=schema) or []:
